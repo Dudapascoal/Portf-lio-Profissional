@@ -2221,11 +2221,6 @@ footer::before {
 
 
 
-  .skills-mobile-viewport:focus-within .skills-mobile-track,
-  .skills-mobile-viewport:active .skills-mobile-track {
-    animation-play-state: paused;
-  }
-
   body.light-theme .skill-mobile {
     background: #fff;
     color: #105a9f;
