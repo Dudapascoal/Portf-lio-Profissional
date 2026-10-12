@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfólio Profissional</title>
+  <link rel="preload" as="image" href="img/home-background-poster.jpg" fetchpriority="high" />
+
+  <link rel="shortcut icon" href="img/logo(light-theme).png">
+  <link rel="stylesheet" href="css/style.css?v=skills-themes-5" />
+  <link rel="stylesheet" href="css/mobile.css?v=skills-spacing-2" />
+  <link rel="stylesheet" href="css/modal.css" />
+  <link rel="stylesheet" href="css/light-theme.css" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Kanit:wght@100..900&family=Rubik:wght@300..900&family=Montserrat:wght@100..900&family=DM+Sans:wght@100..1000&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+
+
+</head>
+
+<body>
+  <script>
+    // Restaura o tema antes de renderizar o conteúdo da página.
+    try {
+      document.body.classList.toggle('light-theme', localStorage.getItem('theme') === 'light');
+    } catch (error) {
+      // Mantém o tema padrão quando o armazenamento estiver indisponível.
+    }
+  </script>
+  <div id="sobre"></div>
+  <header class="header">
+
+    <div class="left">
+
+      <button class="menu-toggle" aria-label="Abrir menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <a href="#" class="logo">
+        <img src="img/logo2.png" alt="Logo" class="logo-img">
+      </a>
+    </div>
+
+
+    <nav class="navbar">
+
+      <div class="mobile-profile">
+        <img src="img/DUDA.jpg" alt="Foto de perfil" class="profile-photo">
+
+        <div class="profile-text">
+          <strong>Maria Eduarda Moreira Pascoal</strong>
+          <span>Desenvolvedora Full Stack</span>
+        </div>
+      </div>
+
+
+      <a href="#home" class="active">Sobre</a>
+      <a href="#certificacoes">Certificações</a>
+      <a href="#hardskills">Hard skills</a>
+      <a href="#projetos">Projetos</a>
+
+      <button class="mobile-theme-btn">
+        <i class="fas fa-cog"></i>
+        <span>Aplicar tema escuro</span>
+      </button>
+
+
+      <button class="close-menu-btn">Fechar menu</button>
+
+
+    </nav>
+
+    <div class="right-buttons">
+      <a href="https://mail.google.com/mail/?view=cm&to=meduarda.mpascoal@gmail.com&su=Contato%20via%20portfolio"
+        target="_blank" class="contact">Contato</a>
+      <div class="theme-switch-wrapper">
+        <input type="checkbox" id="theme-toggle" class="theme-toggle-checkbox" />
+        <label for="theme-toggle" class="theme-toggle-label">
+          <span class="toggle-ball">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun fa-solid" style="color: #ffc107;"></i>
+          </span>
+        </label>
+      </div>
+    </div>
+  </header>
+
+  <script>
+    document.getElementById('theme-toggle').checked = document.body.classList.contains('light-theme');
+
+    document.addEventListener("DOMContentLoaded", () => {
+
+      const menuToggle = document.querySelector(".menu-toggle");
+      const navbar = document.querySelector(".navbar");
+      const header = document.querySelector(".header");
+      const closeBtn = document.querySelector(".close-menu-btn");
+
+      const mobileThemeBtn = document.querySelector(".mobile-theme-btn");
+      const mobileThemeText = document.querySelector(".mobile-theme-btn span");
+      const themeToggle = document.querySelector("#theme-toggle");
+
+      /* ===============================
+         MENU HAMBÚRGUER
+         =============================== */
+      menuToggle.addEventListener("click", () => {
+        navbar.classList.toggle("active");
+        header.classList.toggle("menu-open");
+      });
+
+      if (closeBtn) {
+        closeBtn.addEventListener("click", () => {
+          navbar.classList.remove("active");
+          header.classList.remove("menu-open");
+        });
+      }
+
+      /* ===============================
+         TEXTO DO TEMA (LÓGICA CORRETA)
+         =============================== */
+      function atualizarTextoTema() {
+        if (themeToggle.checked) {
+          // tema claro ativo → próxima ação
+          mobileThemeText.textContent = "Aplicar tema escuro";
+        } else {
+          // tema escuro ativo → próxima ação
+          mobileThemeText.textContent = "Aplicar tema claro";
+        }
+      }
+
+      /* clique no botão mobile troca o tema */
+      mobileThemeBtn.addEventListener("click", () => {
+        themeToggle.checked = !themeToggle.checked;
+        themeToggle.dispatchEvent(new Event("change"));
+        atualizarTextoTema();
+      });
+
+      /* mantém sincronizado com o botão desktop */
+      themeToggle.addEventListener("change", atualizarTextoTema);
+
+      /* inicializa corretamente ao carregar */
+      atualizarTextoTema();
+
+    });
+  </script>
+
+
+
+
+
+  <section class="home" id="home">
+    <video autoplay muted loop playsinline preload="auto" poster="img/home-background-poster.jpg" class="bg-video">
+      <source src="img/home-background.mp4" type="video/mp4" />
+    </video>
+
+    <div class="home-content">
+      <p class="hello">Olá, me chamo: </p>
+      <h1>
+        <span> Maria Eduarda Moreira Pascoal;<br /></span>
+      </h1>
+      <p class="typing"></p>
+
+      <script>
+        const text = "Desenvolvedora Full Stack ";
+        let index = 0;
+
+        function typeEffect() {
+          const el = document.querySelector(".typing");
+          if (index < text.length) {
+            el.textContent += text.charAt(index);
+            index++;
+            setTimeout(typeEffect, 90);
+          }
+        }
+
+        typeEffect();
+      </script>
+
+      <p>
+        Tenho 18 anos, sou técnica em Análise e Desenvolvimento de Sistemas e atualmente curso o ensino superior na
+        área. Este portfólio tem como objetivo apresentar meu perfil profissional, evidenciar minhas competências
+        técnicas e compartilhar projetos que refletem minha evolução, comprometimento e foco na construção de soluções
+        de qualidade.
+      </p>
+      <br>
+
+      <div class="btn-box">
+        <a href="Currículo Profissional.pdf" download>
+          <button class="btn-1">Baixar currículo</button>
+        </a>
+        <a href="#projetos"><button class="btn-2">Meus Projetos</button></a>
+      </div>
+    </div>
+
+    <div class="img-box">
+      <img src="img/DUDA.jpg" />
+    </div>
+  </section>
+  <br><br>
+
+  <h1 class="section-title">Formação Acadêmica</h1><br>
+
+  <section class="edu-section">
+
+    <div class="edu-card edu-card-pink">
+      <div class="edu-header">
+        <div class="edu-icon-box">
+          <i class="fa-solid fa-globe"></i>
+        </div>
+
+        <div class="edu-date">
+          <span>2024 - 2025</span>
+          <small>Concluído</small>
+        </div>
+      </div>
+
+      <span class="edu-type">Ensino Técnico</span>
+      <h3 class="edu-title">Análise e Desenvolvimento de Sistemas</h3>
+
+      <div class="edu-school">
+        <span class="edu-school-icon" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 21V9L12 3L21 9V21H3Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+            <path d="M9 21V12H15V21" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+          </svg>
+        </span>
+        <p>Senai Manuel Garcia Filho - Diadema</p>
+      </div>
+
+      <hr>
+
+      <p class="edu-text">
+        Formação prática e objetiva, voltada para a rápida inserção no mercado de trabalho e execução de soluções em TI.
+      </p>
+    </div>
+
+    <div class="edu-card edu-card-pink">
+      <div class="edu-header">
+        <div class="edu-icon-box">
+          <i class="fa-solid fa-laptop-code"></i>
+        </div>
+
+        <div class="edu-date">
+          <span>2026 – 2027</span>
+          <small class="edu-status-progress">Em andamento</small>
+        </div>
+
+
+      </div>
+
+      <span class="edu-type">Tecnólogo</span>
+      <h3 class="edu-title">Análise e Desenvolvimento de Sistemas</h3>
+
+      <div class="edu-school">
+        <span class="edu-school-icon" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 21V9L12 3L21 9V21H3Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+            <path d="M9 21V12H15V21" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+          </svg>
+        </span>
+
+        <p>Faculdade Senai de Tecnologia Mecatrônica</p>
+      </div>
+
+
+      <hr>
+
+      <p class="edu-text">
+        Formação técnica e analítica, com foco em engenharia de software, arquitetura de sistemas, modelagem de dados e
+        desenvolvimento de soluções escaláveis e eficientes.
+      </p>
+    </div>
+
+    </div>
+
+    <div class="edu-card edu-card-pink">
+      <div class="edu-header">
+        <div class="edu-icon-box">
+          <i class="fa-solid fa-chart-line"></i>
+        </div>
+
+
+        <div class="edu-date">
+          <span>2026 – 2027</span>
+          <small class="edu-status-progress">Em andamento</small>
+        </div>
+      </div>
+
+      <span class="edu-type">Ensino Técnico</span>
+      <h3 class="edu-title">Administração</h3>
+
+      <div class="edu-school">
+        <span class="edu-school-icon" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 21V9L12 3L21 9V21H3Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+            <path d="M9 21V12H15V21" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+          </svg>
+        </span>
+        <p>Senai Manuel Garcia Filho - Diadema</p>
+      </div>
+
+      <hr>
+
+      <p class="edu-text">
+        Formação focada no apoio à gestão empresarial, com atuação em finanças, RH, marketing e rotinas administrativas,
+        desenvolvendo organização, comunicação e visão profissional.
+      </p>
+    </div>
+
+
+  </section>
+  <br>
+
+  <div id="certificacoes" class="anchor-offset"></div>
+  <h1 class="section-title">Certificações</h1>
+  <br><br><br>
+  <!-- Carrossel de certificações -->
+  <div class="carrossel-wrapper">
+
+    <!-- Seta esquerda (fora do container) -->
+    <button class="seta esquerda" onclick="mover(-1)" aria-label="Certificação anterior">&#10094;</button>
+
+    <!-- Container interno (apenas o carrossel) -->
+    <div class="carrossel-container" role="region" aria-label="Carrossel de certificações" tabindex="0">
+      <div class="carrossel" id="carrossel">
+
+        <!-- Certificados com BADGE -->
+        <div class="item2 cert-container">
+          <div class="label-group">
+            <a href="https://www.credly.com/badges/f5d4781e-c235-46be-9995-9bae9388c36a/whatsapp" target="_blank"
+              class="cert-label">Ver Badge</a>
+
+            <a href="pdfscertificados/Certificado_CCNA_V7_ INTRODUCTIONTONETWORK.pdf" target="_blank" class="eye-button"
+              title="Ver Certificado">
+              <i class="fas fa-eye"></i><span>Ver Certificado</span>
+            </a>
+          </div>
+          <img src="certificados/CCNA1.png" alt="Certificação 1" class="cert-image">
+          <div class="cert-info">
+            <h3>CCNA V7 – Introduction to Networks</h3>
+            <span>Cisco • 2025</span>
+          </div>
+
+        </div>
+
+        <div class="item2 cert-container">
+          <div class="label-group">
+            <a href="https://www.credly.com/badges/c9d76e1b-b804-4c7f-8bc3-975dc7ec5c5a/whatsapp" target="_blank"
+              class="cert-label">Ver Badge</a>
+
+            <a href="pdfscertificados/Certificado_CCNA V7_SWITCHING_ROUTING_AND_WIRELESS_ESSENTIAL.pdf" target="_blank"
+              class="eye-button" title="Ver Certificado">
+              <i class="fas fa-eye"></i><span>Ver Certificado</span>
+            </a>
+          </div>
+          <img src="certificados/CCNA2.png" alt="Certificação 2" class="cert-image">
+          <div class="cert-info">
+            <h3>CCNA V7 – Switching, routing and wireless essential</h3>
+            <span>Cisco • 2025</span>
+          </div>
+
+
+        </div>
+
+        <div class="item2 cert-container">
+          <div class="label-group">
+            <a href="https://www.credly.com/badges/3ef9b1de-b552-450f-b357-6d4c21b570fc/whatsapp" target="_blank"
+              class="cert-label">Ver Badge</a>
+
+            <a href="pdfscertificados/Certificado_Implantacao_de_Servicos_em_Nuvem-AWS_Cloud_Practitioner_Foundationa.pdf"
+              target="_blank" class="eye-button" title="Ver Certificado">
+              <i class="fas fa-eye"></i><span>Ver Certificado</span>
+            </a>
+          </div>
+          <img src="certificados/AWS.png" alt="Certificação 3" class="cert-image">
+          <div class="cert-info">
+            <h3>AWS Foundations</h3>
+            <span>AWS Certificates • 2024</span>
+          </div>
+        </div>
+
+        <div class="item2 cert-container">
+          <div class="label-group">
+            <a href="pdfscertificados/Certificado_Ciberseguranca_na_Nuve.pdf" target="_blank" class="eye-button"
+              title="Ver Certificado">
+              <i class="fas fa-eye"></i><span>Ver Certificado</span>
+            </a>
+          </div>
+          <img src="certificados/Cibersegurança.png" alt="Cibersegurança" class="cert-image">
+          <div class="cert-info">
+            <h3>Cibersegurança na Nuvem</h3>
+            <span>Senai São Paulo • 2025</span>
+          </div>
+
+        </div>
+
+        <!-- Certificados sem badge -->
+        <div class="item2 cert-container">
+          <a href="pdfscertificados/Certificado_Implantacao_de_Servicos_em_Nuvem-Google_Cloud_Foundation.pdf"
+            target="_blank" class="eye-button top-left">
+            <i class="fas fa-eye"></i><span>Ver Certificado</span>
+          </a>
+          <img src="certificados/Google cloud.png" alt="Google Cloud" class="cert-image">
+          <div class="cert-info">
+            <h3>Google Cloud Foundations</h3>
+            <span>Senai São Paulo • 2023</span>
+          </div>
+        </div>
+
+        <div class="item2 cert-container">
+          <a href="pdfscertificados/Certificado_Implantacao_e_Analise_de_Dados_em_Nuvem-Microsoft_DP-90(2).pdf"
+            target="_blank" class="eye-button top-left">
+            <i class="fas fa-eye"></i><span>Ver Certificado</span>
+          </a>
+          <img src="certificados/Microsoft DP-900.png" alt="DP-900" class="cert-image">
+          <div class="cert-info">
+            <h3>Microsoft DP-900</h3>
+            <span>Senai São Paulo • 2023</span>
+          </div>
+        </div>
+
+        <div class="item2 cert-container">
+          <a href="pdfscertificados/Certificado_Implantacao_de_Servicos_em_Nuvem-Microsoft_AZ-90.pdf" target="_blank"
+            class="eye-button top-left">
+            <i class="fas fa-eye"></i><span>Ver Certificado</span>
+          </a>
+          <img src="certificados/Microsoft AZ-900.png" alt="AZ-900" class="cert-image">
+          <div class="cert-info">
+            <h3>Microsoft AZ-900</h3>
+            <span>Senai São Paulo • 2024</span>
+          </div>
+        </div>
+
+        <div class="item2 cert-container">
+          <a href="pdfscertificados/Certificado_Implantacao_de_Servicos_de_Inteligencia_Artificial_em_Nuvem-Microsoft_AI-90.pdf"
+            target="_blank" class="eye-button top-left">
+            <i class="fas fa-eye"></i><span>Ver Certificado</span>
+          </a>
+          <img src="certificados/Microsoft AI-900.png" alt="AI-900" class="cert-image">
+          <div class="cert-info">
+            <h3>Microsoft AI-900</h3>
+            <span>Senai São Paulo • 2025</span>
+          </div>
+        </div>
+
+        <div class="item2 cert-container">
+          <a href="pdfscertificados/Certificado_FLUENCIA-FUNDAMENTOS_DA_INTELIGENCIA_ARTIFICIA.pdf" target="_blank"
+            class="eye-button top-left">
+            <i class="fas fa-eye"></i><span>Ver Certificado</span>
+          </a>
+          <img src="certificados/Fluencia IA.png" alt="Fluência IA" class="cert-image">
+          <div class="cert-info">
+            <h3>Fluência IA</h3>
+            <span>Senai São Paulo • 2025</span>
+          </div>
+        </div>
+
+        <div class="item2 cert-container">
+          <a href="pdfscertificados/Certificado_Privacidade_e_Protecao_de_Dados_(LGPD).pdf" target="_blank"
+            class="eye-button top-left">
+            <i class="fas fa-eye"></i><span>Ver Certificado</span>
+          </a>
+          <img src="certificados/LGPD.png" alt="LGPD" class="cert-image">
+          <div class="cert-info">
+            <h3>Privacidade e proteção de dados</h3>
+            <span>Senai São Paulo • 2024</span>
+          </div>
+        </div>
+
+        <div class="item2 cert-container">
+          <a href="pdfscertificados/WEB_3.0_Certificado.pdf" target="_blank" class="eye-button top-left">
+            <i class="fas fa-eye"></i><span>Ver Certificado</span>
+          </a>
+          <img src="certificados/web 3.0.png" alt="Web 3.0" class="cert-image">
+          <div class="cert-info">
+            <h3>Web 3.0</h3>
+            <span>Senai São Paulo • 2025</span>
+          </div>
+        </div>
+
+        <div class="item2 cert-container">
+          <a href="pdfscertificados/Certificado_Economia_Circula.pdf" target="_blank" class="eye-button top-left">
+            <i class="fas fa-eye"></i><span>Ver Certificado</span>
+          </a>
+          <img src="certificados/economia circular.png" alt="Economia Circular" class="cert-image">
+          <div class="cert-info">
+            <h3>Economia Circular</h3>
+            <span>Senai São Paulo • 2025</span>
+          </div>
+        </div>
+
+        <div class="item2 cert-container">
+          <a href="pdfscertificados/Certificado_Desvendando_o_5.pdf" target="_blank" class="eye-button top-left">
+            <i class="fas fa-eye"></i><span>Ver Certificado</span>
+          </a>
+          <img src="certificados/desvendando o 5g.png" alt="5G" class="cert-image">
+          <div class="cert-info">
+            <h3>Desvendando o 5G</h3>
+            <span>Senai São Paulo • 2024</span>
+          </div>
+        </div>
+
+        <div class="item2 cert-container">
+          <a href="pdfscertificados/Certificado_Desvendando_o_ES.pdf" target="_blank" class="eye-button top-left">
+            <i class="fas fa-eye"></i><span>Ver Certificado</span>
+          </a>
+          <img src="certificados/desvendando o ESG.png" alt="ESG" class="cert-image">
+          <div class="cert-info">
+            <h3>Desvendando o ESG</h3>
+            <span>Senai São Paulo • 2025</span>
+          </div>
+        </div>
+
+        <div class="item2 cert-container">
+          <a href="pdfscertificados/Certificado_Empreender_SENA.pdf" target="_blank" class="eye-button top-left">
+            <i class="fas fa-eye"></i><span>Ver Certificado</span>
+          </a>
+          <img src="certificados/empreender senai.png" alt="Empreender Senai" class="cert-image">
+          <div class="cert-info">
+            <h3>Empreender Senai</h3>
+            <span>Senai São Paulo • 2025</span>
+          </div>
+        </div>
+
+        <div class="item2 cert-container">
+          <a href="pdfscertificados/Certificado_Competencia_Transversal-Seguranca_no_Trabalh.pdf" target="_blank"
+            class="eye-button top-left">
+            <i class="fas fa-eye"></i><span>Ver Certificado</span>
+          </a>
+          <img src="certificados/Segurança no trabalho.png" alt="Segurança no Trabalho" class="cert-image">
+          <div class="cert-info">
+            <h3>Segurança no trabalho</h3>
+            <span>Senai São Paulo • 2024</span>
+          </div>
+        </div>
+
+        <div class="item2 cert-container">
+          <a href="pdfscertificados/Certificado_Desvendando_a_Industria_4..pdf" target="_blank"
+            class="eye-button top-left">
+            <i class="fas fa-eye"></i><span>Ver Certificado</span>
+          </a>
+          <img src="certificados/desvendando a industria 4.0.png" alt="Indústria 4.0" class="cert-image">
+          <div class="cert-info">
+            <h3>Desvendando a Indústria 4.0</h3>
+            <span>Senai São Paulo • 2025</span>
+          </div>
+        </div>
+
+
+
+
+        <div class="item2 cert-container">
+          <a href="pdfscertificados/Certificado_E-commerce - Construção e Operacionalizaçã.pdf" target="_blank"
+            class="eye-button top-left">
+            <i class="fas fa-eye"></i><span>Ver Certificado</span>
+          </a>
+          <img src="certificados/E-commerce.jpg" alt="E-commerce" class="cert-image">
+          <div class="cert-info">
+            <h3>E-Commerce: Construção e Operacionalização</h3>
+            <span>Senai São Paulo • 2025</span>
+          </div>
+        </div>
+
+        <div class="item2 cert-container">
+          <a href="pdfscertificados/Certificado_Design UX e U.pdf" target="_blank" class="eye-button top-left">
+            <i class="fas fa-eye"></i><span>Ver Certificado</span>
+          </a>
+          <img src="certificados/desing_UI_UX.jpg" alt="Design UI e UX" class="cert-image">
+          <div class="cert-info">
+            <h3>Design UI e UX</h3>
+            <span>Senai São Paulo • 2025</span>
+          </div>
+        </div>
+
+        <div class="item2 cert-container">
+          <a href="pdfscertificados/Certificado_FUNDAMENTOS E AÇÕES DA ECONOMIA CIRCULA.pdf" target="_blank"
+            class="eye-button top-left">
+            <i class="fas fa-eye"></i><span>Ver Certificado</span>
+          </a>
+          <img src="certificados/Fundamentos da Economia Circular.png" alt="E-commerce" class="cert-image">
+          <div class="cert-info">
+            <h3>Fundamentos e Ações da Economia Circular</h3>
+            <span>Senai São Paulo • 2026</span>
+          </div>
+        </div>
+
+        <div class="item2 cert-container">
+          <a href="pdfscertificados/Certificado_Ética na Inteligência Artificia.pdf" target="_blank"
+            class="eye-button top-left">
+            <i class="fas fa-eye"></i><span>Ver Certificado</span>
+          </a>
+          <img src="certificados/Ética na Inteligência Artificial.png" alt="E-commerce" class="cert-image">
+          <div class="cert-info">
+            <h3>Ética na Inteligência Artificial</h3>
+            <span>Senai São Paulo • 2026</span>
+          </div>
+        </div>
+
+        <div class="item2 cert-container">
+          <a href="pdfscertificados/Certificado_Excel Básic.pdf" target="_blank" class="eye-button top-left">
+            <i class="fas fa-eye"></i><span>Ver Certificado</span>
+          </a>
+          <img src="certificados/Excel Basico.png" alt="E-commerce" class="cert-image">
+          <div class="cert-info">
+            <h3>Excel Básico</h3>
+            <span>Senai São Paulo • 2026</span>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+    <!-- Seta direita (fora do container) -->
+    <button class="seta direita" onclick="mover(1)" aria-label="Próxima certificação">&#10095;</button>
+
+  </div>
+
+  <!-- Botão "Veja todas as certificações" -->
+  <div class="ver-todas-certificacoes">
+    <a href="https://drive.google.com/drive/folders/1K8HYNcabptkDgzS9qwUw9F8MPCiMWI3D?usp=sharing" target="_blank">
+      <i class="fas fa-external-link-alt"></i>
+      Clique aqui e veja todas as certificações
+    </a>
+  </div>
+  </div>
+
+  <!-- Importar ícones Font Awesome -->
+  <script src="https://kit.fontawesome.com/a2e0e6ad8f.js" crossorigin="anonymous"></script>
+
+
+
+  <div class="sk">
+    <section class="services-section" id="hardskills">
+      <h1 class="section-title">Hard Skills</h1>
+    </section>
+
+    <h2 class="sub">Linguagens, Tecnologias e Plataformas de Desenvolvimento</h2>
+
+    <div class="carousel-wrapper">
+      <div class="cards-carousel" id="hardSkillsCarousel">
+
+        <!-- Página 1 -->
+        <div class="cards-container">
+          <div class="card">
+            <div class="icon">
+              <img src="img/html.png" alt="HTML" />
+            </div>
+            <h3>HTML</h3>
+            <p>Utilizada para marcar os elementos da página e construí-la.</p>
+          </div>
+
+          <div class="card active">
+            <div class="icon">
+              <img src="img/css.png" alt="CSS" />
+            </div>
+            <h3>CSS</h3>
+            <p>Linguagem de estilo usada para estilizar os elementos da página.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon">
+              <img src="img/js.png" alt="JavaScript" />
+            </div>
+            <h3>JavaScript</h3>
+            <p>Usada para descrever funcionalidades e comportamentos da página.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon">
+              <img src="img/java.svg" alt="Java" />
+            </div>
+            <h3>Java</h3>
+            <p>Desenvolvimento de aplicações Android, servidores e soluções multiplataforma.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon">
+              <img src="img/SQL.png" alt="MySQL" />
+            </div>
+            <h3>MySQL</h3>
+            <p>O MySQL é um sistema de gerenciamento de banco de dados.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon">
+              <img src="img/python.png" alt="Python" />
+            </div>
+            <h3>Python</h3>
+            <p>Utilizada em desenvolvimento web, análise de dados, IA e automação.</p>
+          </div>
+        </div>
+
+        <!-- Página 2 -->
+        <div class="cards-container">
+          <div class="card">
+            <div class="icon">
+              <img src="img/react.png" alt="React" />
+            </div>
+            <h3>React</h3>
+            <p>Biblioteca JavaScript para construir interfaces de usuário.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon">
+              <img src="img/figma.png" alt="Figma" />
+            </div>
+            <h3>Figma</h3>
+            <p>Ferramenta de design focada em design de interface (UI) e UX.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon">
+              <img src="img/quant ux.png" alt="Quant-UX" />
+            </div>
+            <h3>Quant-UX</h3>
+            <p>Ferramenta de pesquisa e testes de usabilidade com insights baseados em dados.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon">
+              <img src="img/git.png" alt="Git" />
+            </div>
+            <h3>Git</h3>
+            <p>Sistema de controle de versões distribuído.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon aws-icon"></div>
+            <h3>AWS</h3>
+            <p>Plataforma de computação em nuvem da Amazon.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon">
+              <img src="img/miro.png" alt="Miro" />
+            </div>
+            <h3>Miro</h3>
+            <p>Plataforma projetada para colaboração em equipe e trabalho remoto.</p>
+          </div>
+        </div>
+
+        <!-- Página 3 -->
+        <div class="cards-container">
+          <div class="card">
+            <div class="icon githubicon"></div>
+            <h3>Github</h3>
+            <p>Plataforma para hospedar, gerenciar e colaborar em projetos Git.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon">
+              <img src="img/IntelliJI.png" alt="IntelliJ" />
+            </div>
+            <h3>IntelliJ</h3>
+            <p>IDE utilizada para programar com produtividade.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon">
+              <img src="img/AndroidStudio.png" alt="AndroidStudio" />
+            </div>
+            <h3>Android Studio</h3>
+            <p>IDE oficial para desenvolvimento Android.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon">
+              <img src="img/boostrap.png" alt="Bootstrap" />
+            </div>
+            <h3>Bootstrap</h3>
+            <p>Framework front-end com modelos pré-estruturados.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon">
+              <img src="img/vscode.png" alt="VSCode" />
+            </div>
+            <h3>VS Code</h3>
+            <p>Editor de código-fonte com suporte a múltiplas linguagens.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon">
+              <img src="img/canva.png" alt="Canva" />
+            </div>
+            <h3>Canva</h3>
+            <p>Plataforma online de design gráfico.</p>
+          </div>
+        </div>
+
+        <!-- Página 4 -->
+        <div class="cards-container">
+
+          <div class="card">
+            <div class="icon">
+              <img src="img/node.png" alt="Node.js" />
+            </div>
+            <h3>Node.js</h3>
+            <p>Ambiente de execução JavaScript para back-end.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon">
+              <img src="img/angular.png" alt="API" />
+            </div>
+            <h3>Angular</h3>
+            <p>Framework aberto, baseado em componentes e escrito em TypeScript.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="icon">
+              <img src="img/nuvemshp.png" alt="NuvemShop" />
+            </div>
+            <h3>NuvemShop</h3>
+            <p>Plataforma de e-commerce que permite criar lojas virtuais personalizadas. </p>
+          </div>
+
+          <div class="card">
+            <div class="icon">
+              <img src="img/IOT.jpg" alt="Docker" />
+            </div>
+            <h3>IOT</h3>
+            <p>Rede de objetos físicos conectados à internet que coletam e compartilham dados.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon">
+              <img src="img/C++.png" alt="SQL Server" />
+            </div>
+            <h3>C++</h3>
+            <p>Evolução do C com objetos, mais segurança e abstrações avançadas.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon">
+              <img src="img/wix.png" alt="Firebase" />
+            </div>
+            <h3>Wix</h3>
+            <p>Wix é uma plataforma para criar sites de forma simples e sem codificação.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <br>
+
+    <div class="carousel-indicators-wrapper">
+      <span class="arrow left" onclick="mudarSlide('anterior')">&#10094;</span>
+
+      <div class="carousel-indicators">
+        <span class="dot active" onclick="mudarSlide(0)"></span>
+        <span class="dot" onclick="mudarSlide(1)"></span>
+        <span class="dot" onclick="mudarSlide(2)"></span>
+        <span class="dot" onclick="mudarSlide(3)"></span> <!-- Quarta bolinha -->
+      </div>
+
+      <span class="arrow right" onclick="mudarSlide('proximo')">&#10095;</span>
+    </div>
+
+
+    </section>
+    <br><br>
+  </div>
+  <br>
+
+
+  <!-- Seção Projetos -->
+  <div id="projetos" class="anchor-offset"></div>
+  <h1 class="desings">Projetos</h1>
+  <h2 class="sub">Sites, wireframes, protótipos, designs UI\UX</h2>
+  <br>
+
+  <section class="project-grid">
+    <!-- Projeto Pix-Bus -->
+    <div class="project-card" data-title="Pix-Bus" data-image="img/Pix bus.jpg"
+      data-description="Aplicativo para recarga de transporte público com integração ao sistema Pix, foco em acessibilidade e interface minimalista para agilidade no uso diário."
+      data-tags="Figma, UX Research, Mobile First, Design Thinking">
+      <div class="project-thumb">
+        <img src="img/Pix bus.jpg" alt="Pix-Bus" />
+        <div class="project-title">Pix-Bus</div>
+      </div>
+      <div class="project-body">
+        <div class="project-meta">
+          <span class="project-type">Mobile App</span>
+          <div>
+            <span class="tag blue">Wireframe</span>
+            <span class="tag green">UI \ UX Design</span>
+          </div>
+        </div>
+        <p class="descricao">
+          Design proposto para um aplicativo de recarga para cartões de transporte
+          público.
+        </p>
+      </div>
+    </div>
+
+    <!-- Projeto Sea Saver -->
+    <div class="project-card" data-title="Sea Saver" data-image="img/Sea saver.png"
+      data-description="Projeto de site voltado à conscientização sobre a poluição dos oceanos, com visual limpo, acessibilidade e aplicações sustentáveis."
+      data-tags="Quant Ux, Design Sustentável, Aplicações UI\UX">
+      <div class="project-thumb">
+        <img src="img/Sea saver.png" alt="Sea Saver" />
+        <div class="project-title">Sea Saver</div>
+      </div>
+      <div class="project-body">
+        <div class="project-meta">
+          <span class="project-type">Web Site</span>
+          <div>
+            <span class="tag purple">Mockup</span>
+            <span class="tag blue">Wireframe</span>
+          </div>
+        </div>
+        <p>
+          Design proposto para um site que aborda a problematização da poluição
+          dos oceanos.
+        </p>
+      </div>
+    </div>
+
+    <!-- Projeto Loja Online -->
+    <div class="project-card" data-title="Loja Online" data-image="img/login1.png"
+      data-description="Tela de login com inspiração em e-commerces modernos como a NuvemShop. Utiliza práticas de UI modernas e visa ter responsividade para diferentes dispositivos."
+      data-tags="Figma, Login Page, UI Design">
+      <div class="project-thumb">
+        <img src="img/login1.png" alt="Loja Online" />
+        <div class="project-title">Loja Online</div>
+      </div>
+      <div class="project-body">
+        <div class="project-meta">
+          <span class="project-type">Web Site</span>
+          <div>
+            <span class="tag green">UI \ UX Design</span>
+            <span class="tag purple">Mockup</span>
+          </div>
+        </div>
+        <p>Página de login inspirada na loja NuvemShop.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção de projetos -->
+  <section class="project-grid">
+
+    <!-- Projeto SCLA Caminhões -->
+    <div class="project-card" data-title="SCLA Caminhões" data-image="img/SCLA.png"
+      data-description="Site criado para uma empresa de caminhões com foco em soluções de venda, cotação de peças e integração com atendimento; Além de soluções estratégicas para os problemas de desperdicio de peças e ferramentas que ficam paradas no estoque e impossibilitam o investimento em novas mercadorias, Inclui um chat-bot e sistema de carrinho de compras."
+      data-tags="HTML, CSS, JavaScript, Chat-bot, FireBase">
+
+      <div class="project-thumb">
+        <img src="img/SCLA.png" alt="SCLA Caminhões" />
+        <div class="project-title">SCLA Caminhões</div>
+      </div>
+
+      <div class="project-body">
+        <div class="project-meta">
+          <span class="project-type">Web Site</span>
+          <div>
+            <span class="tag pink">Web site</span>
+            <span class="tag orange">E-commerce</span>
+          </div>
+        </div>
+        <p>Site para uma empresa de caminhões com soluções estratégicas para os problemas apontados.</p>
+      </div>
+
+      <!-- ÍCONES -->
+      <div class="project-links">
+        <a href="https://github.com/Dudapascoal/SCLA-Caminh-es" class="github-icon" target="_blank"
+          title="Ver repositório">
+          <i class="fab fa-github"></i>
+        </a>
+
+        <a href="https://dudapascoal.github.io/SCLA-Caminh-es/" class="site-icon" target="_blank" title="Ver site">
+          <i class="fas fa-globe-americas"></i>
+          <!-- bem sutil -->
+        </a>
+      </div>
+    </div>
+
+    <!-- Projeto Calculux -->
+    <div class="project-card" data-title="Calculux" data-image="img/calculux.png"
+      data-description="Uma calculadora divertida e intuitiva criada especialmente para crianças em fase de aprendizagem."
+      data-tags="HTML, CSS, JavaScript, Educacional">
+
+      <div class="project-thumb">
+        <img src="img/calculux.png" alt="Calculux" />
+        <div class="project-title">Calculux</div>
+      </div>
+
+      <div class="project-body">
+        <div class="project-meta">
+          <span class="project-type">Web Site</span>
+          <div>
+            <span class="tag pink">Web site</span>
+            <span class="tag yellow">Histórico</span>
+          </div>
+        </div>
+        <p>Calculadora intuitiva para fins educativos.</p>
+      </div>
+
+      <div class="project-links">
+        <a href="https://github.com/Dudapascoal" class="github-icon" target="_blank" title="Ver repositório">
+          <i class="fab fa-github"></i>
+        </a>
+
+        <a href="#" class="site-icon" target="_blank" title="Ver site">
+          <i class="fas fa-globe-americas"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Projeto CãoPartilhe Amor -->
+    <div class="project-card" data-title="CãoPartilhe Amor" data-image="img/CP.png"
+      data-description="Campanha digital para adoção de pets com interface amigável e responsiva."
+      data-tags="HTML, CSS, JavaScript">
+
+      <div class="project-thumb">
+        <img src="img/CP.png" alt="CãoPartilhe Amor" />
+        <div class="project-title">CãoPartilhe Amor</div>
+      </div>
+
+      <div class="project-body">
+        <div class="project-meta">
+          <span class="project-type">Web Site</span>
+          <div>
+            <span class="tag green">UI \ UX Design</span>
+            <span class="tag pink">Web site</span>
+          </div>
+        </div>
+        <p>ONG ° Adoções de pets.</p>
+      </div>
+
+      <div class="project-links">
+        <a href="https://github.com/Dudapascoal" class="github-icon" target="_blank" title="Ver repositório">
+          <i class="fab fa-github"></i>
+        </a>
+
+        <a href="#" class="site-icon" target="_blank" title="Ver site">
+          <i class="fas fa-globe-americas"></i>
+        </a>
+      </div>
+    </div>
+
+  </section>
+
+
+
+  <!-- Modal de projetos -->
+  <div id="projectModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2 id="modalTitle"></h2>
+
+      <!-- Imagem -->
+      <img id="modalImage" src="" alt="Imagem do Projeto" style="width:100%; border-radius:8px;">
+
+      <!-- Vídeo -->
+      <div id="modalVideoContainer" style="display:none; margin-top: 1rem;">
+        <video id="modalVideo" width="100%" controls style="border-radius:8px;">
+          <source src="" type="video/mp4">
+          Seu navegador não suporta vídeos HTML5.
+        </video>
+      </div>
+
+      <p id="modalDescription"></p>
+      <p><strong>Tecnologias: </strong> <span id="modalTags"></span></p>
+    </div>
+  </div>
+
+
+  <div class="btn-container">
+    <a href="projetos.html" class="see-projects-btn">Ver todos os projetos</a>
+  </div>
+
+
+  <!-- Rodapé -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-nav">
+        <a href="#sobre">Sobre</a>
+        <a href="#projetos">Projetos</a>
+        <a href="https://mail.google.com/mail/?view=cm&to=meduarda.mpascoal@gmail.com&su=Contato%20via%20portfolio"
+          target="_blank">Contato</a>
+      </div>
+
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/maria-eduarda-m-pascoal-73bb99358" target="_blank">
+          <img src="img/linkedin icon.png" alt="LinkedIn" class="social-icon">
+        </a>
+        <a href="https://github.com/Dudapascoal" target="_blank">
+          <img src="img/git-hub.png" alt="GitHub" class="social-icon">
+        </a>
+        <a href="https://www.instagram.com/dudap_pascoall" target="_blank">
+          <img src="img/instagram icon.png" alt="Instagram" class="social-icon">
+        </a>
+        <a href="https://mail.google.com/mail/?view=cm&to=meduarda.mpascoal@gmail.com&su=Contato%20via%20portfolio"
+          target="_blank">
+          <img src="img/gmail-icon.png" alt="Email" class="social-icon">
+        </a>
+        <a href="https://wa.me/5511978221895" target="_blank">
+          <img src="img/wtt.png" alt="WhatsApp" class="social-icon">
+        </a>
+        <a href="https://www.credly.com/users/maria-eduarda-m-pascoal" target="_blank">
+          <img src="img/credly.png" alt="WhatsApp" class="social-icon">
+        </a>
+      </div>
+
+
+
+      <div class="contact-info">
+        <p><i class="fas fa-envelope"></i> meduarda.mpascoal@gmail.com</p>
+        <p><i class="fas fa-phone"></i> (11) 97822-1895</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>
+        © 2026 <a href="#home">Maria Eduarda Moreira Pascoal</a>. Todos os
+        direitos reservados.
+      </p>
+    </div>
+  </footer>
+  <script src="js/script.js?v=skills-spacing-2"></script>
+</body>

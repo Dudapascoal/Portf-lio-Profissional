@@ -1,0 +1,228 @@
+/* Aparência compartilhada dos modais; mantém dimensões e estrutura existentes. */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.8);
+  font-family: "DM Sans", sans-serif;
+}
+
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  padding: 0 30px 26px;
+  border: 1px solid #e6e5df;
+  width: 80%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  scrollbar-width: none;
+  border-radius: 20px;
+  color: #242521;
+  box-shadow: 0 18px 48px rgba(25, 28, 20, 0.12);
+  font-family: "DM Sans", sans-serif;
+  isolation: isolate;
+}
+
+.modal-content::-webkit-scrollbar {
+  display: none;
+}
+
+.modal-content::before {
+  transform: translateY(7px);
+  content: "Painel de Projetos";
+  order: 0;
+  display: flex;
+  align-items: flex-start;
+  flex: 0 0 58px;
+  margin: 0;
+  padding: 16px 32px 0 56px;
+  background: url("../img/logo(light-theme).png") no-repeat left 17px;
+  background-size: 42px 36px;
+  color: #111;
+  font-family: "DM Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0;
+}
+
+.modal-content::after {
+  content: "Portfólio Profissional";
+  position: absolute;
+  top: 44px;
+  left: 86px;
+  right: 56px;
+  color: #7b7470;
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0;
+  pointer-events: none;
+}
+.modal-content .close {
+  position: absolute;
+  top: 20px;
+  right: 16px;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 25px;
+  height: 25px;
+  border: 2px solid #242521;
+  border-radius: 50%;
+  background: #fff;
+  color: #242521;
+  font-family: Arial, sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+
+.modal-content .close:hover,
+.modal-content .close:focus-visible {
+  background: #242521;
+  color: #fff;
+}
+
+.modal-content #modalImage {
+  order: 1;
+  flex: 0 0 auto;
+  width: calc(100% + 36px) !important;
+  max-width: none;
+  height: auto;
+  margin: 12px -18px;
+  padding: 0;
+  border-radius: 20px !important;
+  background: transparent;
+  box-shadow: none;
+}
+
+#modalVideoContainer {
+  order: 2;
+  flex: 0 0 auto;
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #ddded2;
+  margin-bottom: 0;
+}
+
+#modalVideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: none;
+  border-radius: 0;
+}
+
+.modal-content #modalTitle {
+  order: 3;
+  margin: 26px 0 12px;
+  text-align: left;
+  color: #1f211d;
+  font-family: "DM Sans", sans-serif;
+  font-size: 27px;
+  font-weight: 600;
+  font-style: normal;
+  line-height: 1.22;
+  letter-spacing: -0.6px;
+  overflow-wrap: anywhere;
+}
+
+.modal p {
+  color: #484b43;
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.75;
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+
+#modalDescription {
+  order: 4;
+  margin: 0 0 24px;
+}
+
+.modal-content p:has(#modalTags) {
+  order: 5;
+  margin: 0;
+  padding-bottom: 22px;
+  border-bottom: 1px solid #e6e5df;
+}
+
+.modal strong {
+  display: block;
+  margin: 0 0 12px;
+  color: #56584f;
+  font-family: "DM Sans", sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+#modalTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag-modal {
+  display: inline-flex;
+  align-items: center;
+  margin: 0;
+  padding: 7px 11px;
+  border: 1px solid #e7e7e0;
+  border-radius: 6px;
+  background: #f5f5f0;
+  color: #292b25;
+  font-family: "DM Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+
+
+/* Tema escuro (padrão): acompanha o tema ativo do portfólio. */
+body:not(.light-theme) .modal { background-color: rgba(0, 0, 0, .84); }
+body:not(.light-theme) .modal-content {
+  background: #17191c; border-color: #35383d; color: #f2f3f5;
+  box-shadow: 0 18px 48px rgba(0,0,0,.45);
+}
+body:not(.light-theme) .modal-content::before {
+  background-image: url("../img/logo2.png"); color: #f2f3f5;
+}
+body:not(.light-theme) .modal-content::after { color: #aeb3bb; }
+body:not(.light-theme) .modal-content .close {
+  background: #25282d; color: #f2f3f5; border-color: #aeb3bb;
+}
+body:not(.light-theme) .modal-content .close:hover,
+body:not(.light-theme) .modal-content .close:focus-visible {
+  background: #f2f3f5; color: #17191c;
+}
+body:not(.light-theme) .modal-content #modalTitle { color: #f7f7f8; }
+body:not(.light-theme) .modal p { color: #c5c9d0; }
+body:not(.light-theme) .modal strong { color: #aeb3bb; }
+body:not(.light-theme) .modal-content p:has(#modalTags) { border-bottom-color: #35383d; }
+body:not(.light-theme) .tag-modal {
+  background: #292d33; border-color: #424750; color: #eceef2;
+}
+body:not(.light-theme) #modalVideoContainer { background: #25282d; }

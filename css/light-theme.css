@@ -1,0 +1,281 @@
+body.light-theme {
+  background-color: #f5f5f5;
+  color: black;
+}
+
+body.light-theme .header {
+  background: white;
+}
+
+/* Logo para tema claro */
+body.light-theme .logo img {
+  content: url('../img/logo\(light-theme\).png');
+  /* imagem da logo para o tema claro */
+}
+
+
+body.light-theme .navbar a {
+  color: black;
+  font-weight: 500 !important;
+}
+
+
+/* Linha animada abaixo dos links – tema claro */
+body.light-theme .navbar a {
+  position: relative;
+  color: black;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* Linha animada */
+body.light-theme .navbar a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  /* posição idêntica ao tema escuro */
+  width: 0%;
+  height: 3px;
+  /* espessura intermediária, visualmente equilibrada */
+  background: #105a9f;
+  /* azul do tema claro */
+  transition: width 0.4s ease;
+  border-radius: 2px;
+}
+
+/* Efeito hover e ativo */
+body.light-theme .navbar a:hover::after,
+body.light-theme .navbar a.active::after {
+  width: 100%;
+}
+
+body.light-theme .navbar a:hover,
+body.light-theme .navbar a.active {
+  color: #105a9f;
+}
+
+body.light-theme .contact {
+  background-color: #105a9f;
+  color: white;
+  border: 2px solid white;
+}
+
+body.light-theme .contact:hover {
+  background-color: white;
+  color: #105a9f;
+  border: 2px solid #105a9f;
+}
+
+body.light-theme .sk {
+  background-color: #edeeef !important;
+}
+
+body.light-theme .section-title {
+  color: #105a9f;
+}
+
+body.light-theme .section-title::after {
+  background-color: #105a9f;
+}
+
+body.light-theme .seta {
+  background-color: #105a9f;
+  color: white;
+}
+
+body.light-theme .desings {
+  color: #105a9f;
+}
+
+body.light-theme .desings::after {
+  background-color: #105a9f;
+}
+
+body.light-theme .sub {
+  color: #105a9f;
+}
+
+body.light-theme .edu-card {
+  background: white;
+  border: 1px solid white;
+}
+
+body.light-theme
+
+/* CORES DOS ÍCONES */
+.edu-card-green .edu-icon-box {
+  background: linear-gradient(135deg, #d0efff, #105a9f);
+}
+
+.edu-card-pink .edu-icon-box {
+  background: linear-gradient(135deg, #d0efff, #105a9f);
+}
+
+/* Ícones Font Awesome */
+body.light-theme .edu-icon-box i {
+  font-size: 24px;
+  color: rgb(255, 255, 255);
+}
+
+body.light-theme .edu-date span {
+  color: #105a9f;
+}
+
+body.light-theme .edu-type {
+  color: #105a9f;
+}
+
+body.light-theme .edu-title {
+  color: black;
+}
+
+body.light-theme .edu-school-icon {
+  color: #105a9f;
+}
+
+body.light-theme .edu-card hr {
+  border-top: 1px solid #105a9f;
+}
+
+body.light-theme .project-card {
+  background: white;
+}
+
+body.light-theme .project-body {
+  background-color: white;
+}
+
+body.light-theme .project-links a {
+  color: #002d57;
+}
+
+
+body.light-theme p {
+  color: black;
+}
+
+body.light-theme .card {
+  background-color: white;
+}
+
+body.light-theme .card p {
+  color: black;
+  font-weight: 300;
+}
+
+body.light-theme .card h3 {
+  color: #105a9f;
+}
+
+body.light-theme .project-type {
+  color: #105a9f !important;
+}
+
+body.light-theme footer {
+  background-color: white;
+  color: black;
+}
+
+body.light-theme .footer-bottom a {
+  color: #105a9f;
+}
+
+body.light-theme .footer-nav a {
+  color: black;
+}
+
+body.light-theme .footer-nav a:hover {
+  color: #105a9f !important;
+}
+
+body.light-theme .social-links a {
+  color: black;
+}
+
+body.light-theme .footer-nav a::after {
+  background-color: #105a9f;
+}
+
+body.light-theme .social-links a::before {
+  background-color: rgba(112, 202, 255, 0.2);
+}
+
+body.light-theme .dot.active {
+  background-color: #105a9f;
+}
+
+body.light-theme .arrow {
+  color: #105a9f;
+}
+
+body.light-theme .home-content p {
+  color: white;
+}
+
+body.light-theme .tag {
+  color: black;
+}
+
+body.light-theme .footer-bottom {
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+
+body.light-theme .aws-icon {
+  background-image: url(../img/aws\(light\ theme\).png);
+  /* ícone para tema claro */
+}
+
+body.light-theme .github-icon {
+  color: #696969;
+}
+
+body.light-theme .githubicon {
+  background-image: url(../img/github\(light\ theme\).png);
+  /* ícone para tema claro */
+}
+
+body.light-theme .see-projects-btn {
+  background-color: white;
+  color: #105a9f;
+}
+
+body.light-theme .back-button {
+  background-color: white;
+  border: 2px solid #105a9f;
+}
+
+body.light-theme .back-button i {
+  color: #105a9f;
+}
+
+
+body.light-theme .ver-todas-certificacoes a {
+  color: #105a9f;
+  font-weight: 500;
+}
+
+body.light-theme .page-btn,
+body.light-theme .arrow-btn,
+body.light-theme .next-btn {
+  border: 2px solid #105a9f;
+  color: #105a9f;
+}
+
+body.light-theme .page-btn.active {
+  background-color: #105a9f;
+  color: #ffffff;
+}
+
+body.light-theme .page-btn:hover,
+body.light-theme .arrow-btn:hover,
+body.light-theme .next-btn:hover {
+  background: #105a9f;
+  color: #ffffff;
+}
+
+body.light-theme .tag.white {
+  background-color: black;
+  color: white;
+}

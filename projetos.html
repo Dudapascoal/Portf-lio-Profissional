@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio profissional</title>
+  <script>
+    (function () {
+      const saved = localStorage.getItem("theme");
+
+      if (saved === "light") {
+        document.documentElement.classList.add("light-theme");
+        document.body.classList.add("light-theme");
+      }
+    })();
+  </script>
+
+  <link rel="shortcut icon" href="img/logo(light-theme).png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/light-theme.css" />
+  <link rel="stylesheet" href="css/modal.css" />
+  <link rel="stylesheet" href="css/mobile.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Kanit:wght@100..900&family=Rubik:wght@300..900&family=Montserrat:wght@100..900&family=DM+Sans:wght@100..1000&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body class="projetos">
+
+  <!-- Botão de voltar -->
+  <a href="index.html" class="back-button">
+    <i class="fas fa-circle-arrow-left"></i>
+  </a>
+  <br><br><br>
+
+  <!-- Seção Projetos -->
+  <div id="projetos" class="anchor-offset"></div>
+  <section class="project-grid">
+    <!-- Projeto Pix-Bus -->
+    <div class="project-card" data-title="Pix-Bus" data-image="img/Pix bus.jpg"
+      data-description="Aplicativo para recarga de transporte público com integração ao sistema Pix, foco em acessibilidade e interface minimalista para agilidade no uso diário."
+      data-tags="Figma, UX Research, Mobile First, Design Thinking">
+      <div class="project-thumb">
+        <img src="img/Pix bus.jpg" alt="Pix-Bus" />
+        <div class="project-title">Pix-Bus</div>
+      </div>
+      <div class="project-body">
+        <div class="project-meta">
+          <span class="project-type">Mobile App</span>
+          <div>
+            <span class="tag blue">Wireframe</span>
+            <span class="tag green">UI & UX Design</span>
+          </div>
+        </div>
+        <p class="descricao">
+          Design proposto para um aplicativo de recarga para cartões de transporte
+          público.
+        </p>
+      </div>
+    </div>
+
+    <!-- Projeto Sea Saver -->
+    <div class="project-card" data-title="Sea Saver" data-image="img/Sea saver.png"
+      data-description="Projeto de site voltado à conscientização sobre a poluição dos oceanos, com visual limpo, acessibilidade e aplicações sustentáveis."
+      data-tags="Quant Ux, Design Sustentável, Aplicações UI\UX">
+      <div class="project-thumb">
+        <img src="img/Sea saver.png" alt="Sea Saver" />
+        <div class="project-title">Sea Saver</div>
+      </div>
+      <div class="project-body">
+        <div class="project-meta">
+          <span class="project-type">Web Site</span>
+          <div>
+            <span class="tag purple">Protótipo</span>
+            <span class="tag blue">Wireframe</span>
+          </div>
+        </div>
+        <p>
+          Design proposto para um site que aborda a problematização da poluição
+          dos oceanos.
+        </p>
+      </div>
+    </div>
+
+    <!-- Projeto Loja Online -->
+    <div class="project-card" data-title="Loja Online" data-image="img/login1.png"
+      data-description="Tela de login com inspiração em e-commerces modernos como a NuvemShop. Utiliza práticas de UI modernas e visa ter responsividade para diferentes dispositivos."
+      data-tags="Figma, Login Page, UI Design">
+      <div class="project-thumb">
+        <img src="img/login1.png" alt="Loja Online" />
+        <div class="project-title">NuvemShop</div>
+      </div>
+      <div class="project-body">
+        <div class="project-meta">
+          <span class="project-type">Web Site</span>
+          <div>
+            <span class="tag green">UI & UX Design</span>
+            <span class="tag purple">Protótipo</span>
+          </div>
+        </div>
+        <p>Página de login inspirada na loja NuvemShop.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção de projetos -->
+  <section class="project-grid">
+    <!-- Projeto SCLA Caminhões -->
+
+    <div class="project-card" data-title="SCLA Caminhões" data-image="img/SCLA.png"
+      data-description="Site criado para uma empresa de caminhões com foco em soluções de venda, cotação de peças e integração com atendimento; Além de soluções estratégicas para os problemas de desperdicio de peças e ferramentas que ficam paradas no estoque e impossibilitam o investimento em novas mercadorias, Inclui um chat-bot e sistema de carrinho de compras."
+      data-tags="HTML, CSS, JavaScript, Chat-bot, FireBase">
+      <div class="project-thumb">
+        <img src="img/SCLA.png" alt="SCLA Caminhões" />
+        <div class="project-title">SCLA Caminhões</div>
+      </div>
+      <div class="project-body">
+        <div class="project-meta">
+          <span class="project-type">Web Site</span>
+          <div>
+            <span class="tag pink">Web site</span>
+            <span class="tag orange">E-commerce</span>
+          </div>
+        </div>
+        <p>Site para uma empresa de caminhões com soluções estratégicas para os problemas apontados.</p>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/Dudapascoal" class="github-icon" target="_blank" title="Ver repositório">
+          <i class="fab fa-github"></i>
+        </a>
+
+        <a href="#" class="site-icon" target="_blank" title="Ver site">
+          <i class="fas fa-globe-americas"></i>
+        </a>
+      </div>
+    </div>
+    </div>
+
+
+    <!-- Projeto Calculux -->
+    <div class="project-card" data-title="Calculux" data-image="img/calculux.png"
+      data-description="Uma calculadora divertida e intuitiva criada especialmente para crianças em fase de aprendizagem. Com a presença do Raiva, personagem marcante de Divertida Mente, que chama a atenção do público infantil, tranformando as operações matemáticas em uma experiência visual e envolvente."
+      data-tags="HTML, CSS, JavaScript, Educacional">
+      <div class="project-thumb">
+        <img src="img/calculux.png" alt="Calculux" />
+        <div class="project-title">Calculux</div>
+      </div>
+      <div class="project-body">
+        <div class="project-meta">
+          <span class="project-type">Web Site</span>
+          <div>
+            <span class="tag pink">Web site</span>
+            <span class="tag yellow">Histórico</span>
+          </div>
+        </div>
+        <p>Calculadora intuitiva para fins educativos.</p>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/Dudapascoal" class="github-icon" target="_blank" title="Ver repositório">
+          <i class="fab fa-github"></i>
+        </a>
+
+        <a href="#" class="site-icon" target="_blank" title="Ver site">
+          <i class="fas fa-globe-americas"></i>
+        </a>
+      </div>
+    </div>
+    </div>
+
+    <!-- Projeto CãoPartilhe Amor -->
+    <div class="project-card" data-title="CãoPartilhe Amor" data-image="img/CP.png"
+      data-description="Campanha digital para adoção de pets com interface amigável, responsiva e voltada para aqueles que querem salvar a vida de um animalzinho."
+      data-tags="HTML, CSS, JavaScript">
+      <div class="project-thumb">
+        <img src="img/CP.png" alt="CãoPartilhe Amor" />
+        <div class="project-title">CãoPartilhe Amor</div>
+      </div>
+      <div class="project-body">
+        <div class="project-meta">
+          <span class="project-type">Web Site</span>
+          <div>
+            <span class="tag green">UI & UX Design</span>
+            <span class="tag pink">Web site</span>
+          </div>
+        </div>
+        <p>Site para uma campanha de adoção de pets.</p>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/Dudapascoal" class="github-icon" target="_blank" title="Ver repositório">
+          <i class="fab fa-github"></i>
+        </a>
+
+        <a href="#" class="site-icon" target="_blank" title="Ver site">
+          <i class="fas fa-globe-americas"></i>
+        </a>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <section class="project-grid">
+    <!-- Projeto Final: óticas Prevent -->
+
+    <div class="project-card" data-title="Óticas Prevent" data-image="img/Projeto óticas Prevent.png"
+      data-description="Sistema inovador desenvolvido para aprimorar o e-commerce das Óticas Prevent, combinando Inteligência Artificial e Realidade Virtual. O sistema conta com um chatbot interativo que conversa com os usuários, tornando a experiência de navegação mais leve e envolvente. Com o apoio da Realidade Virtual, os clientes podem experimentar armações de forma virtual, vivenciando uma experiência de compra moderna, prática e tecnológica."
+      data-tags="HTML, CSS, JavaScript, Chat-bot, FireBase, Realidade-Virtual">
+      <div class="project-thumb">
+        <img src="img/Projeto óticas Prevent.png" alt="SCLA Caminhões" />
+        <div class="project-title">Óticas Prevent</div>
+      </div>
+      <div class="project-body">
+        <div class="project-meta">
+          <span class="project-type">Web Site</span>
+          <div>
+            <span class="tag pink">Web site</span>
+            <span class="tag orange">E-commerce</span>
+          </div>
+        </div>
+        <p>Site para a empresa Óticas Prevent, com aprimoramento no E-commerce.</p>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/Dudapascoal" class="github-icon" target="_blank" title="Ver repositório">
+          <i class="fab fa-github"></i>
+        </a>
+
+        <a href="#" class="site-icon" target="_blank" title="Ver site">
+          <i class="fas fa-globe-americas"></i>
+        </a>
+      </div>
+    </div>
+    </div>
+
+
+    <!-- Projeto DevCore -->
+    <div class="project-card" data-title="DevCore" data-image="img/devCore.png"
+      data-description="Sistema interativo desenvolvido com foco na área de Administração, que utiliza jogos educativos para tornar o aprendizado mais dinâmico e envolvente. O projeto foi criado com ferramentas de acessibilidade, garantindo que qualquer pessoa independentemente de suas dificuldades ou capacidades, possa usufruir da plataforma com facilidade. O objetivo do DevCore é promover uma experiência inclusiva, intuitiva e divertida no processo de aprendizado administrativo."
+      data-tags="HTML, CSS, JavaScript, LocalStorage, Educacional, UI / UX, Acessibilidade, Design Thinking">
+      <div class="project-thumb">
+        <img src="img/devCore.png" alt="Calculux" />
+        <div class="project-title">DevCore</div>
+      </div>
+      <div class="project-body">
+        <div class="project-meta">
+          <span class="project-type">Web Site</span>
+          <div>
+            <span class="tag pink">Web site</span>
+            <span class="tag neon">Jogos</span>
+          </div>
+        </div>
+        <p>Web Site com jogos interativos sobre o ramo administrativo.</p>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/Dudapascoal" class="github-icon" target="_blank" title="Ver repositório">
+          <i class="fab fa-github"></i>
+        </a>
+
+        <a href="#" class="site-icon" target="_blank" title="Ver site">
+          <i class="fas fa-globe-americas"></i>
+        </a>
+      </div>
+    </div>
+    </div>
+
+    <!-- Projeto Paloma Nogueira Studio -->
+    <div class="project-card" data-title="Paloma Nogueira Studio" data-image="img/studio.png"
+      data-description="Projeto desenvolvido para uma cabeleireira, com o objetivo de automatizar o processo de marcação de horários e organizar o catálogo de serviços de forma simples e intuitiva. A plataforma foi projetada para destacar os serviços oferecidos, proporcionando uma experiência moderna e prática, que facilita tanto o gerenciamento do estúdio quanto o acesso dos clientes às informações e agendamentos."
+      data-tags="HTML, CSS, JavaScript, Serviços, Agendamento">
+      <div class="project-thumb">
+        <img src="img/studio.png" alt="CãoPartilhe Amor" />
+        <div class="project-title">Paloma Nogueira Studio</div>
+      </div>
+      <div class="project-body">
+        <div class="project-meta">
+          <span class="project-type">Web Site</span>
+          <div>
+            <span class="tag green">UI & UX Design</span>
+            <span class="tag pink">Web site</span>
+          </div>
+        </div>
+        <p>Sistema desenvolvido para um estúdio de beleza, automatizando o agendamento de horários e a organização do
+          catálogo de serviços.</p>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/Dudapascoal" class="github-icon" target="_blank" title="Ver repositório">
+          <i class="fab fa-github"></i>
+        </a>
+
+        <a href="#" class="site-icon" target="_blank" title="Ver site">
+          <i class="fas fa-globe-americas"></i>
+        </a>
+      </div>
+    </div>
+    </div>
+  </section>
+
+
+
+
+
+  <!-- =========================
+     PAGINAÇÃO DOS PROJETOS
+========================= -->
+
+  <div class="pagination-projects">
+
+    <!-- BOTÃO ANTERIOR -->
+    <a href="index.html" class="arrow-btn">
+      &#10094;
+    </a>
+
+    <!-- PÁGINAS -->
+    <a href="projetos.html" class="page-btn active">1</a>
+
+    <a href="projetos2.html" class="page-btn">2</a>
+
+    <a href="projetos3.html" class="page-btn">3</a>
+
+
+    <!-- BOTÃO PRÓXIMO -->
+    <a href="projetos2.html" class="next-btn">
+      Próximo &#10095;
+    </a>
+
+  </div>
+
+
+  <!-- Modal de projetos -->
+  <div id="projectModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2 id="modalTitle"></h2>
+
+      <!-- Imagem -->
+      <img id="modalImage" src="" alt="Imagem do Projeto" style="width:100%; border-radius:8px;">
+
+      <!-- Vídeo -->
+      <div id="modalVideoContainer" style="display:none; margin-top: 1rem;">
+        <video id="modalVideo" width="100%" controls style="border-radius:8px;">
+          <source src="" type="video/mp4">
+          Seu navegador não suporta vídeos HTML5.
+        </video>
+      </div>
+
+      <p id="modalDescription"></p>
+      <p><strong>Tecnologias:</strong><span id="modalTags"></span></p>
+
+    </div>
+  </div>
+
+  <script src="js/projetos.js"></script>
+</body>
+
+</html>

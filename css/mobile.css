@@ -1,0 +1,716 @@
+/* =========================
+   ESCONDE MOBILE NO DESKTOP
+   ========================= */
+.mobile-profile,
+.close-menu-btn,
+.menu-toggle,
+.mobile-theme-btn {
+  display: none;
+}
+
+@media (max-width: 768px) {
+
+  main,
+  section,
+  .home,
+  .hero {
+    padding-top: 85px;
+    /* header tem 75px */
+  }
+}
+
+/* =====================================================
+   MOBILE HEADER — ATÉ 768px
+   ===================================================== */
+@media (max-width: 768px) {
+
+  /* =========================
+     RESET MOBILE
+     ========================= */
+  body {
+    overflow-x: hidden;
+  }
+
+  /* =========================
+     HEADER COM BORDAS INFERIORES CURVAS
+     ========================= */
+  .header {
+    height: 75px;
+    padding: 0 20px;
+
+    display: flex;
+    align-items: center !important;
+    justify-content: center;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    background: black;
+    z-index: 1000;
+
+    border-bottom-left-radius: 28px;
+    border-bottom-right-radius: 28px;
+  }
+
+  /* =========================
+     LOGO CENTRALIZADA (CENTRO REAL)
+     ========================= */
+  .logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1001;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .logo-img {
+    height: 38px;
+    width: auto;
+    object-fit: contain;
+  }
+
+
+  .logo::after {
+    content: "Portfólio\A Profissional";
+    white-space: pre-line;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.1;
+
+    text-align: left;
+    color: #8fb3e2;
+  }
+
+
+  /* =========================
+     MENU HAMBÚRGUER EM CÍRCULO
+     ========================= */
+  .menu-toggle {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #8fb3e2 !important;
+    border: 2px solid #8fb3e2 !important;
+    border-radius: 50%;
+
+    cursor: pointer;
+    z-index: 1002;
+  }
+
+  /* LINHAS DO HAMBÚRGUER */
+  .menu-toggle span {
+    position: absolute;
+    width: 10px;
+    height: 2px;
+    background: #0f366a !important;
+    border-radius: 2px;
+    transition: 0.3s ease;
+  }
+
+  .menu-toggle span:nth-child(1) {
+    transform: translateY(-6px);
+  }
+
+  .menu-toggle span:nth-child(2) {
+    transform: translateY(0);
+  }
+
+  .menu-toggle span:nth-child(3) {
+    transform: translateY(6px);
+  }
+
+  /* =========================
+     ESCONDE ITENS DESKTOP
+     ========================= */
+  .right-buttons {
+    display: none !important;
+  }
+
+  .navbar a::after {
+    display: none;
+  }
+
+  /* =========================
+     MENU MOBILE (OFF-CANVAS)
+     ========================= */
+  .navbar {
+    position: fixed !important;
+    top: 0;
+    left: -100%;
+    transform: none !important;
+
+    width: 80%;
+    height: 100vh;
+    background: black;
+
+    padding: 100px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    transition: left 0.3s ease;
+    z-index: 999;
+  }
+
+  .navbar.active {
+    left: 0;
+  }
+
+  .navbar a {
+    font-size: 20px;
+    color: white !important;
+  }
+
+  .navbar a:hover,
+  .navbar a.active {
+    color: #8fb3e2 !important;
+  }
+
+  /* =========================
+     ITENS APENAS MOBILE
+     ========================= */
+  .mobile-only {
+    display: flex;
+    justify-content: center;
+  }
+
+  /* =========================
+     BOTÃO CONTATO NO MENU
+     ========================= */
+  .navbar .contact {
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+    border-radius: 25px;
+    font-size: 16px;
+  }
+
+  /* =========================
+     TOGGLE DE TEMA NO MENU
+     ========================= */
+  .navbar .theme-switch-wrapper {
+    margin-top: 20px;
+    align-self: center;
+  }
+}
+
+
+/* =====================================================
+   AJUSTES VISUAIS MOBILE (MANTIDOS)
+   ===================================================== */
+@media (max-width: 768px) {
+
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: -100%;
+
+    width: 75%;
+    max-width: 280px;
+    height: 100vh;
+
+    background: black;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    padding: 100px 16px 20px;
+    gap: 8px;
+
+    transition: left 0.3s ease;
+    z-index: 999;
+  }
+
+  .navbar.active {
+    left: 0;
+  }
+
+  /* 🔧 AJUSTE PEDIDO — LINKS MAIS À ESQUERDA */
+  .navbar a {
+    width: 100%;
+    text-align: left;
+
+    font-size: 16px;
+    font-weight: 500;
+
+    padding: 12px 6px;
+    /* mais à esquerda */
+    margin-left: -6px;
+    /* aproxima da borda */
+
+    border-radius: 8px;
+
+    display: flex;
+    align-items: center;
+
+    color: #333;
+  }
+
+  /* 🔧 ACTIVE COM ESPAÇO PROPORCIONAL */
+  .navbar a.active {
+    background: #707070ae;
+    padding-left: 14px;
+    /* respiro interno correto */
+  }
+
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: #000;
+    border-radius: 5px;
+  }
+
+  .right-buttons {
+    display: none;
+  }
+
+  .img-box {
+    margin-top: 75px;
+    margin-bottom: -40px;
+  }
+
+
+  /* Imagem da pessoa */
+  .img-box img {
+    border-radius: 50%;
+    width: 305px;
+    box-shadow: 0 8px 15px #4a7fa7;
+  }
+
+}
+
+
+/* =====================================================
+   PERFIL + ESCONDER LOGO (CORREÇÃO REAL)
+   ===================================================== */
+@media (max-width: 768px) {
+
+  .header.menu-open .logo {
+    display: none !important;
+  }
+}
+
+
+/* =====================================================
+   PERFIL MOBILE (PROFISSIONAL)
+   ===================================================== */
+@media (max-width: 768px) {
+
+  .header.menu-open .logo {
+    display: none !important;
+  }
+
+  .mobile-profile {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 15px;
+  }
+
+  .profile-photo {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .profile-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+  }
+
+  .profile-text strong {
+    font-family: "DM Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+  }
+
+  .profile-text span {
+    font-family: "DM Sans", sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: #7c7c7c;
+  }
+
+  .navbar {
+    padding-top: 80px;
+  }
+}
+
+
+/* =========================
+   HAMBÚRGUER → X (MENU ABERTO)
+   ========================= */
+.header.menu-open .menu-toggle span:nth-child(1) {
+  transform: rotate(45deg);
+}
+
+.header.menu-open .menu-toggle span:nth-child(2) {
+  opacity: 0;
+}
+
+.header.menu-open .menu-toggle span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+.header.menu-open .menu-toggle span {
+  transform-origin: center;
+}
+
+
+@media (max-width: 768px) {
+
+  /* MOSTRA BOTÃO FECHAR NO MOBILE */
+  .close-menu-btn {
+    display: block;
+  }
+
+  /* opcional: só aparece quando o menu abre */
+  .navbar:not(.active) .close-menu-btn {
+    display: none;
+  }
+
+}
+
+
+/* =========================
+   BOTÃO FECHAR MENU
+   ========================= */
+.close-menu-btn {
+  margin-top: auto;
+  width: 100%;
+
+  padding: 12px;
+  border-radius: 20px;
+
+  background: transparent;
+  border: 2px solid #8fb3e2 !important;
+
+  color: #8fb3e2 !important;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: "DM Sans", sans-serif;
+
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.close-menu-btn:hover {
+  background: #8fb3e2;
+  color: #0f366a !important;
+  border: 2px solid #0f366a !important;
+}
+
+/* =========================
+   BOTÃO TEMA MOBILE (ESTILO LINK)
+   ========================= */
+.mobile-theme-btn {
+  width: 100%;
+  background: transparent;
+  border: none;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 12px 4px;
+  margin-top: 6px;
+
+  font-size: 16px;
+  font-weight: 500;
+  font-family: inherit;
+
+  color: #dadada;
+  cursor: pointer;
+  border-radius: 8px;
+
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.mobile-theme-btn i {
+  font-size: 16px;
+}
+
+/* =====================================================
+   MENU MOBILE — TEMA CLARO
+   (usa o mesmo light-theme do desktop)
+   ===================================================== */
+
+@media (max-width: 768px) {
+
+  /* FUNDO DO MENU */
+  body.light-theme .navbar {
+    background: #ffffff;
+  }
+
+  /* LINKS */
+  body.light-theme .navbar a {
+    color: #333 !important;
+  }
+
+  body.light-theme .navbar a:hover {
+    color: #105a9f !important;
+  }
+
+  body.light-theme .navbar a.active {
+    background: #eaeaea;
+    color: #105a9f !important;
+  }
+
+  /* PERFIL */
+  body.light-theme .mobile-profile {
+    background: transparent;
+  }
+
+  body.light-theme .profile-text strong {
+    color: #333;
+  }
+
+  body.light-theme .profile-text span {
+    color: #777;
+  }
+
+  /* BOTÃO FECHAR MENU */
+  body.light-theme .close-menu-btn {
+    border-color: #105a9f !important;
+    color: #105a9f !important;
+  }
+
+  body.light-theme .close-menu-btn:hover {
+    background: #0f366a;
+    color: white !important;
+    border-color: #105a9f !important;
+  }
+
+  /* BOTÃO TEMA MOBILE */
+  body.light-theme .mobile-theme-btn span {
+    color: #105a9f !important;
+  }
+
+  /* ÍCONE DO BOTÃO TEMA */
+  body.light-theme .mobile-theme-btn i {
+    color: #000000;
+  }
+
+  /* ÍCONE DO BOTÃO TEMA */
+  body.light-theme .logo::after {
+    color: #0f366a !important;
+  }
+
+  body.light-theme .logo-img {
+    height: 38px;
+  }
+
+
+
+
+  @media (max-width: 768px) {
+    .mobile-theme-btn {
+      display: flex;
+    }
+  }
+
+  .mobile-theme-btn {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    .navbar .mobile-theme-btn {
+      display: flex;
+    }
+  }
+
+  @media (max-width: 768px) {
+
+    .btn-box {
+      display: flex;
+      flex-direction: row;
+      /* garante lado a lado */
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      width: 100%;
+    }
+
+    .btn-box .btn-1,
+    .btn-box .btn-2 {
+      width: auto;
+      /* remove largura quebrada */
+      flex: 0 1 auto;
+      /* não força quebra */
+    }
+
+  }
+
+  @media (max-width: 768px) {
+    .footer-content {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .footer-nav a {
+      margin: 10px 0;
+
+    }
+
+    .social-links a {
+      margin: 10px;
+    }
+
+    footer {
+      padding: 40px 15px 20px;
+    }
+
+
+  }
+
+  @media (max-width: 768px) {
+
+    .footer-nav {
+      display: flex;
+      flex-direction: row;
+      /* garante lado a lado */
+      justify-content: center;
+      /* centraliza */
+      align-items: center;
+      gap: 14px;
+      /* espaço entre os links */
+      flex-wrap: wrap;
+      /* não quebra feio em telas menores */
+    }
+
+  }
+
+  @media (max-width: 768px) {
+    .project-card {
+      max-width: 450px !important;
+      /* 🔼 um pouco maior */
+      flex: 0 1 360px !important;
+      /* 🔼 base maior */
+      margin: 0 auto 24px;
+    }
+
+    .project-card .badge,
+    .project-card .tag {
+      margin-top: 12px;
+    }
+
+
+  }
+
+
+  @media (max-width: 768px) {
+    body.projetos .project-grid {
+      gap: 40px !important;
+      margin: 40px !important;
+      padding: 0 !important;
+    }
+
+    body.projetos .project-card {
+      margin: 0 !important;
+    }
+
+    body.projetos .btn-container,
+    body.projetos .see-projects-btn {
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+  }
+
+  @media (max-width: 768px) {
+
+    /* remove qualquer empurrão extra */
+    body.projetos .hello {
+      padding-top: 0 !important;
+      margin-top: 0 !important;
+    }
+
+    body.projetos .anchor-offset {
+      top: 0 !important;
+      margin: 0 !important;
+    }
+
+    /* conteúdo começa logo abaixo do botão */
+    body.projetos .home {
+      padding-top: 20px !important;
+    }
+
+    .back-button {
+
+      top: 15px;
+      left: 12px;
+      width: 40px;
+      height: 40px;
+
+    }
+
+  }
+
+
+  @media (max-width: 768px) {
+    .sub {
+      margin-bottom: 10px !important;
+
+
+    }
+
+    .has-mobile-skills > .sub {
+      margin-bottom: 0 !important;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .project-grid {
+      gap: 40px !important;
+      margin: 40px !important;
+      padding: 0 !important;
+    }
+
+    .project-card {
+      margin: 0 !important;
+    }
+
+
+  }
+}
+
+.mobile-theme-btn {
+  display: none;
+}
